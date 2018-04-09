@@ -5,7 +5,7 @@ This is script to run a simple text mining exercise in R-Shiny. It includes the 
 * see tokens and frequency
 
 ## Getting Started
-You must have R or R studio installed on your computer. The app is contained in two files, the interface part (ui.R) and the operational part (server.R). 
+You must have R or R studio installed on your computer. The app is contained in two files, the interface part (ui.R) and the operational part (server.R), and everything is run through the main file (main.R).
 
 You will need a data input file, structured as such:
 
