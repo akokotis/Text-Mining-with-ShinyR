@@ -22,3 +22,6 @@ Because I created the dropdown to contain the list of categories for subsetting 
 Thanks to all the open source code out there that helped me in creating this thing! The two main resources I used to debug and figure out how to code the UI experience I wanted are:
 * [Stack Overlfow](https://stackoverflow.com/questions/tagged/shiny)
 * [Shiny App Gallery](https://shiny.rstudio.com/gallery/)
+
+## Preview of App
+![Alt text](https://github.com/akokotis/Text-Mining-with-ShinyR/blob/master/images/shiny-app.PNG)
