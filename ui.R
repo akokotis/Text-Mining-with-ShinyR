@@ -5,15 +5,13 @@ ui = fluidPage(
   sidebarLayout(
     sidebarPanel(
       tags$head(
-        tags$style(HTML('#downloadData{background-color:aqua}'))),
+        tags$style(HTML('#downloadData{background-color:#FFD700}'))),
       
 
       # Choose Buckets to Analyze                   
       verbatimTextOutput('out3'),
-      selectInput('in3', 'Choose Buckets', buckets, multiple=TRUE, selectize=FALSE),
+      selectInput('in3', 'Choose Buckets', buckets, multiple=TRUE, selectize=TRUE, selected=buckets[2]),
       textInput("max", label = h6("Number of Results"), value = "20"),
-      # Load Button
-      actionButton("load", "Load"),
       
       tags$hr(),
       
@@ -23,14 +21,15 @@ ui = fluidPage(
                 accept = c("text/csv",
                            "text/comma-separated-values,text/plain",
                            ".csv")),
-      # Load Button
+      # Stopwords Load Button
       actionButton("loadStop", "Load"),
       
       hr(),
       
-      # Add Stop Words
+      # Append Stop Words
       textInput("addStop", label = h4("Add New Stop Word"), value = ""),                   
-      # Load Button
+      
+      # Download Stopwords List Load Button
       actionButton("loadAdd", "Add Stop Word"),
       downloadButton("downloadData", "Download"),
       h6("Prevew of Stop Words"),
