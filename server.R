@@ -2,13 +2,9 @@
 server <- function(input, output, session) {
   
   maindata = reactive({
-    if(input$load == 0){return()}
-    
     df = data
     df = df[which(df$buckets %in% input$in3),]
-
   })
-  
   values = reactiveValues()
   
   stopwords = reactive({
@@ -48,6 +44,9 @@ server <- function(input, output, session) {
   # Find Trigrams in main data
   threetoken = reactive({
     req(maindata())
+    validate(
+      need(input$max != "", "Please complete 'Number of Results' to display records.")
+    )
     maindata() %>%
       unnest_tokens(trigram, text, token="ngrams", n=3) %>%
       separate(trigram, c("word1","word2","word3"), sep=" ") %>%
